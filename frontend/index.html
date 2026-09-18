@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>EcoValor AI — Enterprise Industrial Waste Valorization Platform</title>
+  <meta name="description" content="AI-Powered Industrial Waste Valorization Platform for circular economy, material recovery, ESG compliance, and emissions optimization.">
+  <meta name="keywords" content="industrial waste valorization, circular economy, material recovery, recycling AI, ESG compliance">
+  <meta name="author" content="EcoValor AI">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EcoValor AI — Industrial Waste Valorization Platform">
+  <meta property="og:description" content="Transforming industrial byproducts into circular value streams.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a5c38'/><text y='.9em' font-size='68' x='14'>🌿</text></svg>">
+
+  <!-- Fonts: Inter & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════════════════════╗
+     ║               APPLICATION SHELL                         ║
+     ╚══════════════════════════════════════════════════════════╝ -->
+<div class="app-shell" id="app-shell">
+
+  <!-- ── Sidebar ─────────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Main navigation">
+
+    <!-- Logo -->
+    <div class="sidebar-logo">
+      <div class="logo-mark">
+        <i data-lucide="leaf"></i>
+      </div>
+      <div class="logo-text">
+        <h2>EcoValor AI</h2>
+        <span>Valorization Platform</span>
+      </div>
+    </div>
+
+    <!-- Primary Navigation -->
+    <nav class="sidebar-nav" role="menubar" aria-label="Primary navigation">
+
+      <div class="nav-section-label">Operations</div>
+
+      <div class="nav-item" data-page="dashboard" role="menuitem" tabindex="0"
+           id="nav-dashboard" aria-label="Dashboard">
+        <span class="nav-icon"><i data-lucide="layout-dashboard"></i></span>
+        <span>Dashboard</span>
+      </div>
+
+      <div class="nav-item" data-page="register" role="menuitem" tabindex="0"
+           id="nav-register" aria-label="Register new waste batch">
+        <span class="nav-icon"><i data-lucide="plus-circle"></i></span>
+        <span>Register Waste</span>
+      </div>
+
+      <div class="nav-item" data-page="analysis" role="menuitem" tabindex="0"
+           id="nav-analysis" aria-label="AI Valorization Analysis">
+        <span class="nav-icon"><i data-lucide="brain-circuit"></i></span>
+        <span>AI Analysis</span>
+        <span class="nav-badge-pill" title="Phase 1 Ready">Phase 1</span>
+      </div>
+
+      <div class="nav-item" data-page="history" role="menuitem" tabindex="0"
+           id="nav-history" aria-label="Waste Inventory & History">
+        <span class="nav-icon"><i data-lucide="history"></i></span>
+        <span>Waste Inventory</span>
+      </div>
+
+      <div class="nav-section-label" style="margin-top:10px;">Intelligence & Compliance</div>
+
+      <div class="nav-item" data-page="reports" role="menuitem" tabindex="0"
+           id="nav-reports" aria-label="Reports & Compliance Hub">
+        <span class="nav-icon"><i data-lucide="file-text"></i></span>
+        <span>Reports &amp; ESG</span>
+      </div>
+
+      <div class="nav-item" data-page="notifications" role="menuitem" tabindex="0"
+           id="nav-notifications" aria-label="Alerts and Notifications">
+        <span class="nav-icon"><i data-lucide="bell"></i></span>
+        <span>Alerts &amp; Feed</span>
+        <span class="sidebar-badge" id="sidebar-notif-badge" style="display:none;">0</span>
+      </div>
+
+      <div class="nav-item" data-page="organization" role="menuitem" tabindex="0"
+           id="nav-organization" aria-label="Organization & Facility Management">
+        <span class="nav-icon"><i data-lucide="building-2"></i></span>
+        <span>Organization</span>
+      </div>
+
+      <div class="nav-item" data-page="settings" role="menuitem" tabindex="0"
+           id="nav-settings" aria-label="User Profile and Settings">
+        <span class="nav-icon"><i data-lucide="settings"></i></span>
+        <span>Settings</span>
+      </div>
+
+    </nav>
+
+    <!-- AI Pipeline Status Widget -->
+    <div class="sidebar-ml-status">
+      <div class="dot"></div>
+      <div>
+        <div style="font-weight:700;font-size:11px;">AI Engine Pipeline</div>
+        <div style="font-size:10px;opacity:0.85;">Phase 2 Hook Configured</div>
+      </div>
+    </div>
+
+    <!-- User Profile Strip in Sidebar -->
+    <div class="sidebar-user" id="sidebar-user-card" tabindex="0" title="Click to view profile">
+      <div class="user-avatar" id="sidebar-user-avatar">EV</div>
+      <div class="user-info">
+        <div class="user-name" id="sidebar-user-name">Dr. Elena Vance</div>
+        <div class="user-role" id="sidebar-user-role">Sustainability Lead</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ── Main Content Area ────────────────────────────────────── -->
+  <div class="main-content">
+
+    <!-- Topbar -->
+    <header class="topbar" role="banner" id="app-topbar">
+      <div class="topbar-left">
+        <!-- Hamburger (mobile) -->
+        <button id="btn-hamburger" aria-label="Toggle sidebar" class="topbar-hamburger-btn">
+          <i data-lucide="menu"></i>
+        </button>
+
+        <div class="topbar-divider"></div>
+
+        <div class="topbar-title-group">
+          <h1 id="topbar-title">Dashboard</h1>
+          <div class="topbar-breadcrumb" id="topbar-sub">Industrial Circular Intelligence</div>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <!-- Organization Pill -->
+        <div class="topbar-org-pill" id="topbar-org-badge" title="Active Industrial Facility">
+          <i data-lucide="building-2" style="width:14px;height:14px;"></i>
+          <span>Apex Advanced Petrochem</span>
+        </div>
+
+        <!-- Notification Bell with Dropdown -->
+        <div class="topbar-dropdown-anchor">
+          <button class="topbar-icon-btn" id="btn-notification-bell" aria-label="Notifications" title="Operational Alerts">
+            <i data-lucide="bell"></i>
+            <span class="notif-badge-counter" id="notif-badge-counter" style="display:none;">0</span>
+          </button>
+          <!-- Notification Dropdown Popover -->
+          <div class="notification-dropdown-menu" id="notification-dropdown-menu" style="display:none;">
+            <!-- Rendered by notifications.js -->
+          </div>
+        </div>
+
+        <!-- User Menu Dropdown -->
+        <div class="topbar-dropdown-anchor">
+          <div class="topbar-avatar" id="topbar-user-avatar" title="Account & Preferences" role="button" tabindex="0">EV</div>
+          <!-- User Dropdown Popover -->
+          <div class="user-dropdown-menu" id="user-dropdown-menu" style="display:none;">
+            <div class="user-dropdown-header">
+              <div style="font-weight:700;color:var(--color-text-primary);" id="topbar-user-name">Dr. Elena Vance</div>
+              <div style="font-size:0.75rem;color:var(--color-text-muted);" id="topbar-user-role">Sustainability Lead</div>
+            </div>
+            <div class="user-dropdown-items">
+              <button class="user-dropdown-item" id="btn-menu-profile">
+                <i data-lucide="user"></i>
+                <span>Profile &amp; Settings</span>
+              </button>
+              <button class="user-dropdown-item" id="btn-menu-org">
+                <i data-lucide="building-2"></i>
+                <span>Organization Details</span>
+              </button>
+              <button class="user-dropdown-item" id="btn-menu-reports">
+                <i data-lucide="file-text"></i>
+                <span>Compliance Reports</span>
+              </button>
+              <div class="dropdown-divider"></div>
+              <button class="user-dropdown-item item-logout" id="btn-menu-logout">
+                <i data-lucide="log-out"></i>
+                <span>Sign Out</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Register CTA Button -->
+        <button class="btn-register" id="btn-quick-register" aria-label="Register new waste entry">
+          <i data-lucide="plus"></i>
+          <span>Register Waste</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Page Content Container -->
+    <main class="page-area" id="page-content" role="main" aria-live="polite">
+      <!-- JavaScript renders active page here -->
+    </main>
+
+  </div><!-- /.main-content -->
+</div><!-- /.app-shell -->
+
+<!-- Toast notification container -->
+<div class="toast-container" id="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+<!-- SPA Module Router -->
+<script type="module" src="js/app.js"></script>
+
+<!-- Lucide auto-init fallback -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide) lucide.createIcons();
+  });
+</script>
+
+</body>
+</html>
