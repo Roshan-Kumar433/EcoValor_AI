@@ -88,3 +88,4 @@ def create_app(config_class=Config) -> Flask:
         return {"status": "ok", "version": "1.0.0-phase1"}, 200
 
     return app
+    app = create_app()
